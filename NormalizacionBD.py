@@ -29,5 +29,16 @@ for row in ws1_destino.iter_rows(min_row=2, min_col=2, values_only=True):
         if cell is not None and '(' in cell:
             ws1_destino[cell.coordinate] = cell.replace('(', '_')
 
+# Aplicar la función para dividir el texto en columnas en la columna B a partir de B2
+# for row in ws1_destino.iter_rows(min_row=2, min_col=2, max_col=2):
+#     for cell in row:
+#         if cell.value is not None:
+#             # Dividir el texto en columnas usando tabulaciones y ')' como delimitadores
+#             split_values = [x.strip() for x in cell.value.split('\t') if x.strip() != '']
+#             split_values = [x.replace(')', '_') for x in split_values]
+#             # Actualizar la celda con los valores divididos
+#             cell.value = split_values
+  
+
 # Guardar los cambios en el archivo Excel
 wb2.save('5164_30_Limpieza.xlsx')
